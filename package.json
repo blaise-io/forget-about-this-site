@@ -1,7 +1,7 @@
 {
   "name": "forget-about-this-site",
   "version": "1.0.0",
-  "description": "Toolbar button that deletes cookies, history, cache and other items of the current website you’re visiting.",
+  "description": "Toolbar button that deletes cookies, history, cache and other items for the current website you’re visiting.",
   "main": "npm run build",
   "config": {
     "webpack": "webpack --devtool inline-source-map --require ts-node/register --config webpack.config.ts"
