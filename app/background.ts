@@ -1,7 +1,7 @@
 import defaultOptions from "./options/defaults";
 
 function success(hostnames: string[], dataTypes: browser.browsingData.DataTypeSet) {
-    const removed = Object.keys(dataTypes).join(", ").replace(/([A-Z]+)/g, ' $1').trim().toLowerCase();
+    const removed = Object.keys(dataTypes).join(", ").replace(/([A-Z]+)/g, " $1").trim().toLowerCase();
     browser.notifications.create({
         type: "basic" as browser.notifications.TemplateType.basic,
         title: `Removed data for ${hostnames.join(", ")}`,
