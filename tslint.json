@@ -1,0 +1,20 @@
+{
+    "defaultSeverity": "warn",
+    "extends": [
+        "tslint:latest"
+    ],
+    "rules": {
+        "no-any": true,
+        "object-literal-sort-keys": false,
+        "semicolon": [true, "always"],
+        "trailing-comma": [
+            true,
+            {
+                "objects": "always",
+                "arrays": "always",
+                "functions": "never",
+                "typeLiterals": "never"
+            }
+        ]
+    }
+}
