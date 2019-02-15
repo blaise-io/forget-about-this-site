@@ -1,6 +1,6 @@
 {
   "name": "forget-about-this-site",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Toolbar button that deletes cookies, history, cache and other items for the current website you’re visiting.",
   "main": "npm run build",
   "config": {
@@ -37,6 +37,7 @@
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "1.1.11",
     "html-webpack-plugin": "3.2.0",
+    "tldts": "4.0.2",
     "ts-loader": "4.4.1",
     "ts-node": "6.1.0",
     "tslint": "5.10.0",
