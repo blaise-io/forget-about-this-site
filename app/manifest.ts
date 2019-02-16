@@ -6,7 +6,14 @@ const manifest = {
     version: process.env.npm_package_version,
     description: process.env.npm_package_description,
     homepage_url: process.env.npm_package_homepage,
-    permissions: ["activeTab", "browsingData", "storage", "notifications"],
+    permissions: [
+        "activeTab",
+        "browsingData",
+        "downloads",
+        "history",
+        "storage",
+        "notifications"
+    ],
     background: {
         scripts: ["/background.js"]
     },

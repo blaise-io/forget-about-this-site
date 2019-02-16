@@ -1,7 +1,7 @@
 {
   "name": "forget-about-this-site",
-  "version": "1.1.0",
-  "description": "Toolbar button that deletes cookies and localStorage for the website you’re currently visiting.",
+  "version": "1.2.0",
+  "description": "Toolbar button that deletes cookies, local storage, browsing history and download history for the website you’re currently visiting.",
   "main": "npm run build",
   "config": {
     "webpack": "webpack --devtool inline-source-map --require ts-node/register --config webpack.config.ts"
