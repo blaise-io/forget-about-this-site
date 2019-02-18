@@ -3,4 +3,6 @@ export default {
     cookies: true,
     downloads: true,
     localStorage: true,
+    showNotification: true,
+    refreshPage: false,
 };

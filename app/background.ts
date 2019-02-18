@@ -50,12 +50,18 @@ browser.browserAction.onClicked.addListener(async (tab) => {
         });
     }
 
-    browser.notifications.create({
-        type: "basic" as browser.notifications.TemplateType.basic,
-        title: `Successfully removed data`,
-        message: `Removed ${removeText} for ${hostnameDomain}`,
-        isClickable: false,
-    });
+    if (options.showNotification) {
+        browser.notifications.create({
+            type: "basic" as browser.notifications.TemplateType.basic,
+            title: `Successfully removed data`,
+            message: `Removed ${removeText} for ${hostnameDomain}`,
+            isClickable: false,
+        });
+    }
+
+    if (options.refreshPage) {
+        browser.tabs.reload(tab.id);
+    }
 
 });
 

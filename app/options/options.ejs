@@ -6,13 +6,18 @@
 </head>
 <body>
     <p>
-        When the toolbar button is clicked, this addon will delete
-        the following items for the current website:
+        When the toolbar button is clicked,<br>
+        Delete the following items for the current website:
     </p>
     <div><label><input type="checkbox" name="cookies"> Cookies</label></div>
     <div><label><input type="checkbox" name="localStorage"> Local storage</label></div>
     <div><label><input type="checkbox" name="history"> Browsing history</label></div>
     <div><label><input type="checkbox" name="downloads"> Download history</label></div>
+    <p>
+        After deleting items:
+    </p>
+    <div><label><input type="checkbox" name="showNotification"> Show a confirmation</label></div>
+    <div><label><input type="checkbox" name="refreshPage"> Refresh the page</label></div>
     <p id="last-saved" style="display:none"></p>
 </body>
 </html>
