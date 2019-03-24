@@ -23,6 +23,10 @@ browser.browserAction.onClicked.addListener(async (tab) => {
 
     const promises = [];
 
+    if (options.closeTab) {
+        await browser.tabs.remove(tab.id);
+    }
+
     if (options.history) {
         promises.push(...await removeHistory(hostnameDomain));
     }
@@ -59,7 +63,7 @@ browser.browserAction.onClicked.addListener(async (tab) => {
         });
     }
 
-    if (options.refreshPage) {
+    if (options.refreshPage && !options.closeTab) {
         browser.tabs.reload(tab.id);
     }
 

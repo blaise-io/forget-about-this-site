@@ -3,6 +3,7 @@ export default {
     cookies: true,
     downloads: true,
     localStorage: true,
+    closeTab: false,
     showNotification: true,
     refreshPage: false,
 };

@@ -1,6 +1,6 @@
 {
   "name": "forget-about-this-site",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Toolbar button that deletes cookies, local storage, browsing history and download history for the website you’re currently visiting.",
   "main": "npm run build",
   "config": {

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Forget about this website options</title>
+    <style>.help{ opacity: 0.7; margin-left: 5px }</style>
 </head>
 <body>
     <p>
@@ -14,10 +15,20 @@
     <div><label><input type="checkbox" name="history"> Browsing history</label></div>
     <div><label><input type="checkbox" name="downloads"> Download history</label></div>
     <p>
+        Before deleting items:
+    </p>
+    <div>
+        <label><input type="checkbox" name="closeTab"> Close tab</label>
+        <small class="help">This prevents the page from writing additional items after deletion</small>
+    </div>
+    <p>
         After deleting items:
     </p>
     <div><label><input type="checkbox" name="showNotification"> Show a confirmation</label></div>
-    <div><label><input type="checkbox" name="refreshPage"> Refresh the page</label></div>
+    <div>
+        <label><input type="checkbox" name="refreshPage"> Refresh the page</label>
+        <small class="help">Incompatible with the Close tab option</small>
+    </div>
     <p id="last-saved" style="display:none"></p>
 </body>
 </html>
