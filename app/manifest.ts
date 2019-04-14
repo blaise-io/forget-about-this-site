@@ -21,7 +21,7 @@ const manifest = {
     icons: {
         256: iconImage,
     },
-    browser_action: {
+    page_action: {
         default_icon: iconImage,
         browser_style: undefined,
     },
@@ -48,7 +48,7 @@ if (process.env.BROWSER === "firefox") {
         }
     };
     manifest.options_ui.browser_style = true;
-    manifest.browser_action.browser_style = false;
+    manifest.page_action.browser_style = false;
 }
 
 module.exports = JSON.stringify(manifest, null, 2);

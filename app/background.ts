@@ -1,7 +1,9 @@
 import * as tldts from "tldts";
 import defaultOptions from "./options/defaults";
 
-browser.browserAction.onClicked.addListener(async (tab) => {
+browser.tabs.onUpdated.addListener((tabId) => browser.pageAction.show(tabId));
+
+browser.pageAction.onClicked.addListener(async (tab) => {
 
     const result = await browser.storage.sync.get("options");
     const options = { ...defaultOptions, ...(result.options || {}) };
