@@ -30,7 +30,7 @@ const manifest = {
         browser_style: undefined,
     },
     commands: {
-        _execute_browser_action: {
+        _execute_page_action: {
             suggested_key: {
                 default: "Ctrl+Alt+H",
                 windows: "Ctrl+Alt+H",

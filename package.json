@@ -1,6 +1,6 @@
 {
   "name": "forget-about-this-site",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Browser page action button that deletes cookies, local storage, browsing history and download history for the website you’re visiting.",
   "main": "npm run build",
   "config": {
