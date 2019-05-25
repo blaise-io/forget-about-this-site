@@ -2,32 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Forget about this website options</title>
+    <title data-message="extensionName"></title>
     <style>.help{ opacity: 0.7; margin-left: 5px }</style>
 </head>
 <body>
-    <p>
-        When the page action button is clicked,<br>
-        Delete the following items for the current website:
-    </p>
-    <div><label><input type="checkbox" name="cookies"> Cookies</label></div>
-    <div><label><input type="checkbox" name="localStorage"> Local storage</label></div>
-    <div><label><input type="checkbox" name="history"> Browsing history</label></div>
-    <div><label><input type="checkbox" name="downloads"> Download history</label></div>
-    <p>
-        Before deleting items:
-    </p>
+    <p data-message="deleteItems"></p>
+    <div><label><input type="checkbox" name="cookies"><span data-message="cookies"></span></label></div>
+    <div><label><input type="checkbox" name="localStorage"><span data-message="localStorage"></span></label></div>
+    <div><label><input type="checkbox" name="history"><span data-message="history"></span></label></div>
+    <div><label><input type="checkbox" name="downloads"><span data-message="downloads"></span></label></div>
+    <p data-message="beforeDeleting"></p>
     <div>
-        <label><input type="checkbox" name="closeTab"> Close tab</label>
-        <small class="help">This prevents the website from writing additional items after deletion</small>
+        <label><input type="checkbox" name="closeTab"><span data-message="closeTab"></span></label>
+        <small class="help" data-message="closeTabHelp"></small>
     </div>
-    <p>
-        After deleting items:
-    </p>
-    <div><label><input type="checkbox" name="showNotification"> Show a confirmation</label></div>
+    <p data-message="afterDeleting"></p>
+    <div><label><input type="checkbox" name="showNotification"><span data-message="showConfirmation"></span></label></div>
     <div>
-        <label><input type="checkbox" name="refreshPage"> Reload the website</label>
-        <small class="help">Incompatible with the Close tab option</small>
+        <label><input type="checkbox" name="refreshPage"><span data-message="reloadWebsite"></span></label>
     </div>
     <p id="last-saved" style="display:none"></p>
 </body>

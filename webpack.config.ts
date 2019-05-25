@@ -1,15 +1,23 @@
 import * as CleanWebpackPlugin from "clean-webpack-plugin";
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
+import * as fs from "fs";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import { resolve } from "path";
 import * as webpack from "webpack";
 import * as ZipPlugin from "zip-webpack-plugin";
+
+const localeDirs = fs.readdirSync(resolve(__dirname, "app/_locales"));
 
 const config: webpack.Configuration = {
     entry: {
         background: resolve(__dirname, "app/background.ts"),
         manifest: resolve(__dirname, "app/manifest.ts"),
         options: resolve(__dirname, "app/options/options.ts"),
+        ...localeDirs.reduce((locales, dir) => {
+            const messageFile = `_locales/${dir}/messages`;
+            locales[messageFile] = resolve(__dirname, `app/${messageFile}.ts`);
+            return locales;
+        }, {}),
     },
     output: {
         filename: "[name].js",
@@ -21,7 +29,7 @@ const config: webpack.Configuration = {
     module: {
         rules: [
             {
-                test: /\/manifest\.ts$/,
+                test: /(messages|manifest)\.ts$/,
                 use: ExtractTextPlugin.extract({ use: [] })
             },
             {
@@ -44,7 +52,7 @@ const config: webpack.Configuration = {
     },
     plugins: [
         new CleanWebpackPlugin([
-            resolve(`dist/${process.env.BROWSER}`),
+            resolve(`dist/${process.env.BROWSER}/*`),
         ], { verbose: false }),
         new webpack.EnvironmentPlugin([
             "BROWSER",
@@ -53,7 +61,7 @@ const config: webpack.Configuration = {
             "npm_package_description",
             "npm_package_homepage",
         ]),
-        new ExtractTextPlugin("manifest.json"),
+        new ExtractTextPlugin("[name].json"),
         new HtmlWebpackPlugin({
             chunks: ["options"],
             filename: "options.html",
@@ -61,7 +69,7 @@ const config: webpack.Configuration = {
         }),
         ...(process.argv.includes("--run-prod") ? [
             new ZipPlugin({
-                exclude: /manifest\.js$/,
+                exclude: /(manifest|messages)\.js$/,
                 filename: [
                     process.env.npm_package_name,
                     process.env.npm_package_version,

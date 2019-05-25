@@ -1,6 +1,8 @@
 import * as tldts from "tldts";
 import defaultOptions from "./options/defaults";
 
+const deleteOptions = ["cookies", "localStorage", "history", "downloads"];
+
 browser.tabs.onUpdated.addListener((tabId) => browser.pageAction.show(tabId));
 
 browser.pageAction.onClicked.addListener(async (tab) => {
@@ -15,13 +17,9 @@ browser.pageAction.onClicked.addListener(async (tab) => {
         hostname
     ]));
 
-    const removeItems = Object.keys(defaultOptions).reduce(
-        (obj, key) => options[key] ? { ...obj, [key]: true } : obj, {}
-    );
-
-    const removeText = Object.keys(removeItems).join(", ")
-        .replace(/([A-Z]+)/g, " $1")
-        .toLowerCase();
+    const removeText = Object.keys(defaultOptions).filter(
+        (key) => deleteOptions.includes(key)
+    ).map((key) => browser.i18n.getMessage(key)).join(", ");
 
     const promises = [];
 
@@ -59,8 +57,8 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     if (options.showNotification) {
         browser.notifications.create({
             type: "basic" as browser.notifications.TemplateType.basic,
-            title: `Successfully removed data`,
-            message: `Removed ${removeText} for ${hostnameDomain}`,
+            title: browser.i18n.getMessage("successNotificationText"),
+            message: browser.i18n.getMessage("successNotificationBody", [removeText, hostnameDomain]),
             isClickable: false,
         });
     }

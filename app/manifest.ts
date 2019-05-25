@@ -2,15 +2,17 @@ import * as iconImage from "./icons/icon.png";
 
 const manifest = {
     manifest_version: 2,
-    name: "Forget about this site",
+    name: "__MSG_extensionName__",
+    description: "__MSG_extensionDescription__",
     version: process.env.npm_package_version,
-    description: process.env.npm_package_description,
     homepage_url: process.env.npm_package_homepage,
+    default_locale: "en",
     permissions: [
         "activeTab",
         "browsingData",
         "downloads",
         "history",
+        "menus",
         "storage",
         "notifications"
     ],
