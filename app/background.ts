@@ -19,7 +19,7 @@ browser.pageAction.onClicked.addListener(async (tab) => {
 
     const removeText = Object.keys(defaultOptions).filter(
         (key) => deleteOptions.includes(key)
-    ).map((key) => browser.i18n.getMessage(key)).join(", ");
+    ).map((key) => browser.i18n.getMessage(key).toLocaleLowerCase()).join(", ");
 
     const promises = [];
 
@@ -63,8 +63,12 @@ browser.pageAction.onClicked.addListener(async (tab) => {
         });
     }
 
-    if (options.refreshPage && !options.closeTab) {
-        browser.tabs.reload(tab.id);
+    if (options.refreshPage) {
+        if (options.closeTab) {
+            browser.tabs.create({url: tab.url});
+        } else {
+            browser.tabs.reload(tab.id);
+        }
     }
 
 });
