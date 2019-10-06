@@ -12,7 +12,6 @@ const manifest = {
         "browsingData",
         "downloads",
         "history",
-        "menus",
         "storage",
         "notifications"
     ],
@@ -34,10 +33,7 @@ const manifest = {
     commands: {
         _execute_page_action: {
             suggested_key: {
-                default: "Ctrl+Alt+H",
-                windows: "Ctrl+Alt+H",
-                linux: "Ctrl+Alt+H",
-                mac: "Command+Alt+H",
+                default: "Ctrl+Shift+X"
             }
         }
     }
@@ -51,6 +47,13 @@ if (process.env.BROWSER === "firefox") {
     };
     manifest.options_ui.browser_style = true;
     manifest.page_action.browser_style = false;
+    manifest.commands['_execute_page_action'] = {
+        suggested_key: {
+            default: "Ctrl+Alt+H"
+        }
+    };
+} else {
+    manifest.background.scripts.unshift("/polyfill.js");
 }
 
 module.exports = JSON.stringify(manifest, null, 2);

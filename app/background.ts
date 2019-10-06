@@ -46,8 +46,8 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     try {
         await Promise.all(promises);
     } catch (error) {
-        browser.notifications.create({
-            type: "basic" as browser.notifications.TemplateType.basic,
+        browser.notifications.create('', {
+            type: "basic",
             title: `Error removing data for ${hostnames[0]}`,
             message: error,
             isClickable: false,
@@ -55,8 +55,8 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     }
 
     if (options.showNotification) {
-        browser.notifications.create({
-            type: "basic" as browser.notifications.TemplateType.basic,
+        browser.notifications.create('', {
+            type: "basic",
             title: browser.i18n.getMessage("successNotificationText"),
             message: browser.i18n.getMessage("successNotificationBody", [removeText, hostnameDomain]),
             isClickable: false,

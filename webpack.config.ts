@@ -8,8 +8,15 @@ import * as ZipPlugin from "zip-webpack-plugin";
 
 const localeDirs = fs.readdirSync(resolve(__dirname, "app/_locales"));
 
+const REQUIRE_POLYFILL = process.env.BROWSER !== "firefox";
+
+function polyfillChunks(...chunks: string[]): string[] {
+    return REQUIRE_POLYFILL ? ["polyfill", ...chunks] : chunks;
+}
+
 const config: webpack.Configuration = {
     entry: {
+        polyfill: resolve(__dirname, "app/polyfill.ts"),
         background: resolve(__dirname, "app/background.ts"),
         manifest: resolve(__dirname, "app/manifest.ts"),
         options: resolve(__dirname, "app/options/options.ts"),
@@ -63,7 +70,7 @@ const config: webpack.Configuration = {
         ]),
         new ExtractTextPlugin("[name].json"),
         new HtmlWebpackPlugin({
-            chunks: ["options"],
+            chunks: polyfillChunks("options"),
             filename: "options.html",
             template: resolve(__dirname, "app/options/options.ejs"),
         }),
