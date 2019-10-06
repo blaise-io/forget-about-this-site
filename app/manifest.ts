@@ -2,15 +2,17 @@ import * as iconImage from "./icons/icon.png";
 
 const manifest = {
     manifest_version: 2,
-    name: "Forget about this site",
+    name: "__MSG_extensionName__",
+    description: "__MSG_extensionDescription__",
     version: process.env.npm_package_version,
-    description: process.env.npm_package_description,
     homepage_url: process.env.npm_package_homepage,
+    default_locale: "en",
     permissions: [
         "activeTab",
         "browsingData",
         "downloads",
         "history",
+        "menus",
         "storage",
         "notifications"
     ],
@@ -21,7 +23,7 @@ const manifest = {
     icons: {
         256: iconImage,
     },
-    browser_action: {
+    page_action: {
         default_icon: iconImage,
         browser_style: undefined,
     },
@@ -30,7 +32,7 @@ const manifest = {
         browser_style: undefined,
     },
     commands: {
-        _execute_browser_action: {
+        _execute_page_action: {
             suggested_key: {
                 default: "Ctrl+Alt+H",
                 windows: "Ctrl+Alt+H",
@@ -48,7 +50,7 @@ if (process.env.BROWSER === "firefox") {
         }
     };
     manifest.options_ui.browser_style = true;
-    manifest.browser_action.browser_style = false;
+    manifest.page_action.browser_style = false;
 }
 
 module.exports = JSON.stringify(manifest, null, 2);
