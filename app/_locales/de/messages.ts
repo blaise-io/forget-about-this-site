@@ -4,7 +4,7 @@ module.exports = JSON.stringify({
     extensionDescription: { message: `Seitenaktionsschaltfläche zum Löschen von Cookies, lokalem Speicher, Browserverlauf und Download-Verlauf für die Website, die Sie besuchen.` },
     successNotificationText: { message: `Erfolgreich entfernte Daten` },
     successNotificationBody: { message: `$1 für $2 entfernt` },
-    deleteItems: { message: `Wenn Sie auf die Schaltfläche für die Seitenaktion klicken,<br> löschen Sie die folgenden Elemente für die aktuelle Website:` },
+    deleteItems: { message: `Wenn Sie auf die Schaltfläche für die Seitenaktion klicken,<br>löschen Sie die folgenden Elemente für die aktuelle Website:` },
     cookies: { message: `Cookies` },
     localStorage: { message: `Lokaler Speicher` },
     history: { message: `Browserverlauf` },

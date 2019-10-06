@@ -1,7 +1,7 @@
 // tslint:disable max-line-length
 module.exports = JSON.stringify({
     extensionName: { message: `Oubliez ce site` },
-    extensionDescription: { message: `Bouton d'action de la page qui supprime les cookies, le stockage local, l'historique de navigation et l'historique de téléchargement du site Web que vous visitez. ` },
+    extensionDescription: { message: `Bouton d'action de la page qui supprime les cookies, le stockage local, l'historique de navigation et l'historique de téléchargement du site Web que vous visitez.` },
     successNotificationText: { message: `Données supprimées avec succès` },
     successNotificationBody: { message: `Supprimé $1 pour $2` },
     deleteItems: { message: `Lorsque vous cliquez sur le bouton d'action de page,<br> Supprimez les éléments suivants pour le site Web actuel:` },
@@ -9,7 +9,7 @@ module.exports = JSON.stringify({
     localStorage: { message: `Stockage local` },
     history: { message: `Historique de navigation` },
     downloads: { message: `Historique des téléchargements` },
-    beforeDeleting: { message: `Avant de supprimer des éléments:` },
+    beforeDeleting: { message: `Avant de supprimer:` },
     closeTab: { message: `Close tab` },
     closeTabHelp: { message: `Cela empêche le site Web d'écrire des éléments supplémentaires après la suppression` },
     afterDeleting: { message: `Après avoir supprimé les éléments:` },
