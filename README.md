@@ -1,7 +1,8 @@
 # Forget about this site
 
-Toolbar button that deletes cookies, localStorage, browsing history and download history for the website you’re currently visiting.
+Firefox addon and Chrome extension that adds a page button that deletes cookies, local storage, browsing history and download history for the website you’re currently visiting.
+
 
 ### [Download for Firefox](https://addons.mozilla.org/addon/forget-about-this-site/)
 
-Chrome support will arrive once it supports the [`RemovalOptions.hostnames`](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/browsingData/RemovalOptions) option.
+### [Download for Chrome](https://chrome.google.com/webstore/detail/media-carousel/okiohagmnigihpbleoloddfldckiknea)
