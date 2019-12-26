@@ -5,4 +5,4 @@ Firefox addon and Chrome extension that adds a page button that deletes cookies,
 
 ### [Download for Firefox](https://addons.mozilla.org/addon/forget-about-this-site/)
 
-### [Download for Chrome](https://chrome.google.com/webstore/detail/media-carousel/okiohagmnigihpbleoloddfldckiknea)
+### [Download for Chrome](https://chrome.google.com/webstore/detail/okiohagmnigihpbleoloddfldckiknea/)
