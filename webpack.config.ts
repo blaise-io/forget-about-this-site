@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
     },
     output: {
         filename: "[name].js",
-        path: resolve(`dist/${process.env.BROWSER}`),
+        path: resolve(__dirname, `dist/${process.env.BROWSER}`),
     },
     resolve: {
         extensions: [".ts"]

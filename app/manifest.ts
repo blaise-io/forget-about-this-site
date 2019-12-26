@@ -12,7 +12,6 @@ const manifest = {
         "browsingData",
         "downloads",
         "history",
-        "menus",
         "storage",
         "notifications"
     ],
@@ -34,10 +33,7 @@ const manifest = {
     commands: {
         _execute_page_action: {
             suggested_key: {
-                default: "Ctrl+Alt+H",
-                windows: "Ctrl+Alt+H",
-                linux: "Ctrl+Alt+H",
-                mac: "Command+Alt+H",
+                default: "Ctrl+Shift+X"
             }
         }
     }
