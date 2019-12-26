@@ -8,7 +8,7 @@ browser.tabs.onUpdated.addListener((tabId) => browser.pageAction.show(tabId));
 browser.pageAction.onClicked.addListener(async (tab) => {
 
     const result = await browser.storage.sync.get("options");
-    const options = { ...defaultOptions, ...(result.options || {}) };
+    const options = {...defaultOptions, ...(result.options || {})};
 
     const hostname = new URL(tab.url).hostname;
     const hostnameDomain = tldts.parse(hostname).domain;
@@ -36,11 +36,11 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     }
 
     if (options.cookies) {
-        promises.push(browser.browsingData.remove({ hostnames }, {cookies: true}));
+        promises.push(browser.browsingData.remove({hostnames}, {cookies: true}));
     }
 
     if (options.localStorage) {
-        promises.push(browser.browsingData.remove({ hostnames }, {localStorage: true}));
+        promises.push(browser.browsingData.remove({hostnames}, {localStorage: true}));
     }
 
     try {
