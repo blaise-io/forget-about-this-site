@@ -23,6 +23,13 @@ const config: webpack.Configuration = {
         filename: "[name].js",
         path: resolve(__dirname, `dist/${process.env.BROWSER}`),
     },
+    optimization: {
+        minimize: false,
+        namedChunks: true,
+        namedModules: true,
+        removeEmptyChunks: true,
+        removeAvailableModules: true,
+    },
     resolve: {
         extensions: [".ts"]
     },

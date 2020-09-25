@@ -9,11 +9,13 @@ if (process.env.BROWSER !== "firefox") {
 }
 
 browser.tabs.onUpdated.addListener((tabId) => browser.pageAction.show(tabId));
+console.info("Forget about this site loaded");
 
 browser.pageAction.onClicked.addListener(async (tab) => {
 
     const result = await browser.storage.sync.get("options");
     const options = {...defaultOptions, ...(result.options || {})};
+    console.info({options});
 
     const taburl = new URL(tab.url);
     const hostname = taburl.hostname;
@@ -21,6 +23,7 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     const hostnames = Array.from(new Set([hostnameDomain, hostname]));
     const origins = hostnames.map((h) => `${taburl.protocol}//${h}`);
     const browsingDataQuery = (process.env.BROWSER === "firefox") ? {hostnames} : {origins};
+    console.info({browsingDataQuery});
 
     const removeText = Object.keys(defaultOptions).filter(
         (key) => deleteOptions.includes(key)
@@ -48,9 +51,13 @@ browser.pageAction.onClicked.addListener(async (tab) => {
         promises.push(browser.browsingData.removeLocalStorage(browsingDataQuery));
     }
 
+
     try {
+        console.info({promises});
         await Promise.all(promises);
+        console.info("All promises fulfilled, data deleted.");
     } catch (error) {
+        console.warn({error});
         await browser.notifications.create({
             type: "basic",
             iconUrl: iconImage,
@@ -84,6 +91,7 @@ async function removeHistory(hostnameDomain: string) {
         startTime: 0,
         maxResults: 1000,
     });
+    console.info({historyItems});
     return Promise.all(historyItems.map(
         (historyItem) => browser.history.deleteUrl({url: historyItem.url})
     ));

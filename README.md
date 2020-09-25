@@ -1,6 +1,6 @@
 # Forget about this site
 
-Delete cookies, local storage, browsing history and/or download history for the website you’re visiting with a single click.
+Browser page action button that deletes cookies, local storage, browsing history and download history for the current website.
 
 ## Add to your browser
 
@@ -9,4 +9,4 @@ Delete cookies, local storage, browsing history and/or download history for the 
 
 ## Options
 
-> ![Forget about this website options](https://i.imgur.com/HSgk6pv.png)
+![Forget about this website options](https://i.imgur.com/tnOVAl5.png)
