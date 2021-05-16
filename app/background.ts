@@ -51,7 +51,6 @@ browser.pageAction.onClicked.addListener(async (tab) => {
         promises.push(browser.browsingData.removeLocalStorage(browsingDataQuery));
     }
 
-
     try {
         console.info({promises});
         await Promise.all(promises);
