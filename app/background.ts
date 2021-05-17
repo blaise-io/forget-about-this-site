@@ -29,6 +29,16 @@ browser.pageAction.onClicked.addListener(async (tab) => {
         (key) => deleteOptions.includes(key)
     ).map((key) => browser.i18n.getMessage(key).toLocaleLowerCase()).join(", ");
 
+    if (options.askConfirmation) {
+        const ask = browser.i18n.getMessage("confirmationPrompt", [removeText]);
+        const confirm = await browser.tabs.executeScript({
+            code: `confirm(${JSON.stringify(ask)})`
+        });
+        if (confirm && !confirm[0]) {
+            return;
+        }
+    }
+
     const promises = [];
 
     if (options.closeTab) {

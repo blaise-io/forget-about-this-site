@@ -10,6 +10,8 @@ module.exports = JSON.stringify({
     history: { message: `Browsing history` },
     downloads: { message: `Download history` },
     beforeDeleting: { message: `Before deleting items:` },
+    askConfirmation: { message: `Ask for confirmation` },
+    confirmationPrompt: { message: `Are you sure you want to remove $1?` },
     closeTab: { message: `Close tab` },
     closeTabHelp: { message: `This prevents the website from writing additional items after deletion` },
     afterDeleting: { message: `After deleting items:` },
