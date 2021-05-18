@@ -25,8 +25,8 @@ browser.pageAction.onClicked.addListener(async (tab) => {
     process.env.BROWSER === "firefox" ? { hostnames } : { origins };
   console.info({ browsingDataQuery });
 
-  const removeText = Object.keys(defaultOptions)
-    .filter((key) => deleteOptions.includes(key))
+  const removeText = deleteOptions
+    .filter((key) => options[key])
     .map((key) => browser.i18n.getMessage(key).toLocaleLowerCase())
     .join(", ");
 
