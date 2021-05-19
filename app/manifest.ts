@@ -34,16 +34,14 @@ const manifest = {
     _execute_page_action: {
       suggested_key: {
         default: "Ctrl+Shift+X",
-      },
-    },
+      }, },
   },
 };
 
 if (process.env.BROWSER === "firefox") {
   manifest.applications = {
     gecko: {
-      id: `${process.env.npm_package_name}@blaise.io`,
-    },
+      id: `${process.env.npm_package_name}@blaise.io`, },
   };
   manifest.options_ui.browser_style = true;
   manifest.page_action.browser_style = false;

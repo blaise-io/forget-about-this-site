@@ -17,22 +17,18 @@ const config: webpack.Configuration = {
             const messageFile = `_locales/${dir}/messages`;
             locales[messageFile] = resolve(__dirname, `app/${messageFile}.ts`);
             return locales;
-        }, {}),
-    },
+        }, {}), },
     output: {
         filename: "[name].js",
-        path: resolve(__dirname, `dist/${process.env.BROWSER}`),
-    },
+        path: resolve(__dirname, `dist/${process.env.BROWSER}`), },
     optimization: {
         minimize: false,
         namedChunks: true,
         namedModules: true,
         removeEmptyChunks: true,
-        removeAvailableModules: true,
-    },
+        removeAvailableModules: true, },
     resolve: {
-        extensions: [".ts"]
-    },
+        extensions: [".ts"] },
     module: {
         rules: [
             {
@@ -55,8 +51,7 @@ const config: webpack.Configuration = {
                     }
                 }]
             },
-        ]
-    },
+        ] },
     plugins: [
         new CleanWebpackPlugin([
             resolve(`dist/${process.env.BROWSER}/*`),
