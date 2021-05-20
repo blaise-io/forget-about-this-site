@@ -9,4 +9,4 @@ Browser page action button that deletes cookies, local storage, browsing history
 
 ## Options
 
-![Forget about this website options](https://i.imgur.com/tnOVAl5.png)
+<img src="screenshot.png" alt="Forget about this site" width="508">
