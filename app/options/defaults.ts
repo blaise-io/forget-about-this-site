@@ -5,6 +5,7 @@ export default {
   localStorage: true,
   askConfirmation: false,
   closeTab: false,
+  closeSameDomainTabs: true,
   showNotification: true,
   refreshPage: false,
 };
