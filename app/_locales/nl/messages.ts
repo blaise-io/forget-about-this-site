@@ -21,6 +21,9 @@ module.exports = JSON.stringify(
     closeTabHelp: {
       message: `Dit voorkomt dat de website nog meer gegevens kan schrijven na het verwijderen`,
     },
+    closeSameDomainTabs: {
+      message: `Sluit alle tabbladen met hetzelfde domein`,
+    },
     afterDeleting: { message: `Na verwijderen:` },
     showConfirmation: { message: `Toon een bevestiging` },
     reloadWebsite: { message: `Website vernieuwen` },

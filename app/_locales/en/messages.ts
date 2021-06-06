@@ -21,6 +21,7 @@ module.exports = JSON.stringify(
     closeTabHelp: {
       message: `This prevents the website from writing additional items after deletion`,
     },
+    closeSameDomainTabs: { message: `Close all tabs with the same domain` },
     afterDeleting: { message: `After deleting items:` },
     showConfirmation: { message: `Show a confirmation` },
     reloadWebsite: { message: `Reload the website` },

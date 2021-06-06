@@ -21,6 +21,9 @@ module.exports = JSON.stringify(
     closeTabHelp: {
       message: `Ciò impedisce al sito web di salvare ulteriori dati dopo la cancellazione`,
     },
+    closeSameDomainTabs: {
+      message: `Chiudi tutte le schede con lo stesso dominio`,
+    },
     afterDeleting: { message: `Dopo la cancellazione:` },
     showConfirmation: { message: `Mostra una notifica` },
     reloadWebsite: { message: `Ricarica la pagina` },

@@ -23,6 +23,7 @@ module.exports = JSON.stringify(
     closeTabHelp: {
       message: `삭제 후에 웹 사이트가 추가 항목을 쓰지 못하도록 함`,
     },
+    closeSameDomainTabs: { message: `도메인이 동일한 모든 탭 닫기` },
     afterDeleting: { message: `항목 삭제 후:` },
     showConfirmation: { message: `확인 표시` },
     reloadWebsite: { message: `웹 사이트 새로 고침` },

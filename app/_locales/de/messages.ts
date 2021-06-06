@@ -23,6 +23,9 @@ module.exports = JSON.stringify(
     closeTabHelp: {
       message: `Dies verhindert, dass die Website nach dem Löschen zusätzliche Elemente schreibt`,
     },
+    closeSameDomainTabs: {
+      message: `Alle Registerkarten mit der gleichen Domäne schließen`,
+    },
     afterDeleting: { message: `Nach dem Löschen von Elementen:` },
     showConfirmation: { message: `Bestätigung anzeigen` },
     reloadWebsite: { message: `Website neu laden` },

@@ -21,6 +21,9 @@ module.exports = JSON.stringify(
     closeTabHelp: {
       message: `Isso impede que o site escreva itens adicionais após a exclusão`,
     },
+    closeSameDomainTabs: {
+      message: `Feche todas as guias com o mesmo domínio`,
+    },
     afterDeleting: { message: `Depois de excluir itens:` },
     showConfirmation: { message: `Mostrar uma confirmação` },
     reloadWebsite: { message: `Recarregue o site` },
