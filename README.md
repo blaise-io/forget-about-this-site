@@ -13,6 +13,8 @@ Browser page action button that deletes cookies, local storage, browsing history
 
 ## Build instructions
 
+Clone or download this repository and open the checkout dir in a shell.
+
 ```
 # Install npm packages
 npm ci
