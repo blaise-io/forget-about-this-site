@@ -10,3 +10,15 @@ Browser page action button that deletes cookies, local storage, browsing history
 ## Options
 
 <img src="screenshot.png" alt="Forget about this site" width="508">
+
+## Build instructions
+
+```
+# Install npm packages
+npm ci
+
+# Build for Firefox
+npm run firefox.build
+
+# Build for Chrome
+npm run chrome.build
