@@ -3,13 +3,11 @@ module.exports = JSON.stringify(
   {
     extensionName: { message: `Oubliez ce site` },
     extensionDescription: {
-      message: `Bouton d'action de la page qui supprime les cookies, le stockage local, l'historique de navigation et l'historique de téléchargement du site Web que vous visitez.`,
-    },
+      message: `Bouton d'action de la page qui supprime les cookies, le stockage local, l'historique de navigation et l'historique de téléchargement du site Web que vous visitez.`, },
     successNotificationText: { message: `Données supprimées avec succès` },
     successNotificationBody: { message: `Supprimé $1 pour $2` },
     deleteItems: {
-      message: `Lorsque vous cliquez sur le bouton d'action de page,<br> Supprimez les éléments suivants pour le site Web actuel:`,
-    },
+      message: `Lorsque vous cliquez sur le bouton d'action de page,<br> Supprimez les éléments suivants pour le site Web actuel:`, },
     cookies: { message: `Cookies` },
     localStorage: { message: `Stockage local` },
     history: { message: `Historique de navigation` },

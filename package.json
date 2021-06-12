@@ -1,19 +1,19 @@
 {
   "name": "forget-about-this-site",
-  "version": "1.7.1",
+  "version": "1.7.3",
   "description": "Browser page action button that deletes cookies, local storage, browsing history and download history for the website you’re visiting.",
   "main": "npm run build",
   "config": {
-    "webpack": "webpack --devtool inline-source-map --require ts-node/register --config webpack.config.ts"
+    "webpack": "webpack --devtool source-map --config webpack.config.ts"
   },
   "scripts": {
     "lint": "tslint -p . --fix",
     "tag": "git tag $npm_package_version && git push origin $npm_package_version",
     "build": "npm run firefox.build; npm run chrome.build",
-    "chrome.dev": "BROWSER=chrome $npm_package_config_webpack --watch --run-dev",
-    "chrome.build": "BROWSER=chrome $npm_package_config_webpack --run-prod",
-    "firefox.dev": "BROWSER=firefox $npm_package_config_webpack --watch --run-dev",
-    "firefox.build": "BROWSER=firefox $npm_package_config_webpack --run-prod"
+    "chrome.dev": "BROWSER=chrome $npm_package_config_webpack --watch --mode development",
+    "chrome.build": "BROWSER=chrome $npm_package_config_webpack --mode production",
+    "firefox.dev": "BROWSER=firefox $npm_package_config_webpack --watch --mode development",
+    "firefox.build": "BROWSER=firefox $npm_package_config_webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -27,12 +27,14 @@
   "homepage": "https://github.com/blaise-io/forget-about-this-site#readme",
   "dependencies": {
     "@types/clean-webpack-plugin": "0.1.2",
+    "@types/copy-webpack-plugin": "5.0.3",
     "@types/extract-text-webpack-plugin": "3.0.3",
     "@types/firefox-webext-browser": "70.0.1",
     "@types/html-webpack-plugin": "2.30.3",
     "@types/node": "10.3.2",
-    "@types/webpack": "4.4.0",
+    "@types/webpack": "4.41.29",
     "clean-webpack-plugin": "0.1.19",
+    "copy-webpack-plugin": "5.1.2",
     "core-js": "2.5.7",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "file-loader": "1.1.11",
@@ -43,8 +45,8 @@
     "tslint": "5.10.0",
     "typescript": "2.9.1",
     "webextension-polyfill": "0.6.0",
-    "webpack": "4.41.4",
-    "webpack-command": "0.2.1",
+    "webpack": "4.46.0",
+    "webpack-cli": "4.7.0",
     "zip-webpack-plugin": "3.0.0"
   }
 }

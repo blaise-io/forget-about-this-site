@@ -3,13 +3,11 @@ module.exports = JSON.stringify(
   {
     extensionName: { message: `Esqueça este site` },
     extensionDescription: {
-      message: `Botão de ação de página que exclui cookies, armazenamento local, histórico de navegação e histórico de downloads do site que você está visitando.`,
-    },
+      message: `Botão de ação de página que exclui cookies, armazenamento local, histórico de navegação e histórico de downloads do site que você está visitando.`, },
     successNotificationText: { message: `Dados removidos com sucesso` },
     successNotificationBody: { message: `Removido $1 por $2` },
     deleteItems: {
-      message: `Quando o botão de ação da página é clicado,<br>Exclua os seguintes itens para o site atual:`,
-    },
+      message: `Quando o botão de ação da página é clicado,<br>Exclua os seguintes itens para o site atual:`, },
     cookies: { message: `Cookies` },
     localStorage: { message: `armazenamento local` },
     history: { message: `Histórico de navegação` },

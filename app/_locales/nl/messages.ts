@@ -3,13 +3,11 @@ module.exports = JSON.stringify(
   {
     extensionName: { message: `Vergeet deze site` },
     extensionDescription: {
-      message: `Pagina-actieknop die cookies, lokale opslag, navigatiegeschiedenis and downloadgeschiedenis verwijdert voor de website die je bezoekt.`,
-    },
+      message: `Pagina-actieknop die cookies, lokale opslag, navigatiegeschiedenis and downloadgeschiedenis verwijdert voor de website die je bezoekt.`, },
     successNotificationText: { message: `Data is verwijderd` },
     successNotificationBody: { message: `$1 verwijderd voor $2` },
     deleteItems: {
-      message: `Wanneer de pagina-actieknop wordt aangeklikt,<br>Verwijder deze gegevens voor de huidige website:`,
-    },
+      message: `Wanneer de pagina-actieknop wordt aangeklikt,<br>Verwijder deze gegevens voor de huidige website:`, },
     cookies: { message: `Cookies` },
     localStorage: { message: `Lokale opslag` },
     history: { message: `Navigatie\u00adgeschiedenis` },

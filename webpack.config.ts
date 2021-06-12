@@ -1,4 +1,5 @@
 import * as CleanWebpackPlugin from "clean-webpack-plugin";
+import * as CopyWebpackPlugin from "copy-webpack-plugin";
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
 import * as fs from "fs";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
@@ -27,6 +28,7 @@ const config: webpack.Configuration = {
         minimize: false,
         namedChunks: true,
         namedModules: true,
+        occurrenceOrder: true,
         removeEmptyChunks: true,
         removeAvailableModules: true,
     },
@@ -37,7 +39,7 @@ const config: webpack.Configuration = {
         rules: [
             {
                 test: /(messages|manifest)\.ts$/,
-                use: ExtractTextPlugin.extract({ use: [] })
+                use: ExtractTextPlugin.extract({use: []})
             },
             {
                 test: /\.ts$/,
@@ -59,8 +61,8 @@ const config: webpack.Configuration = {
     },
     plugins: [
         new CleanWebpackPlugin([
-            resolve(`dist/${process.env.BROWSER}/*`),
-        ], { verbose: false }),
+            resolve(__dirname, `dist/${process.env.BROWSER}/*`),
+        ], {verbose: false}),
         new webpack.EnvironmentPlugin([
             "BROWSER",
             "npm_package_name",
@@ -74,7 +76,10 @@ const config: webpack.Configuration = {
             filename: "options.html",
             template: resolve(__dirname, "app/options/options.ejs"),
         }),
-        ...(process.argv.includes("--run-prod") ? [
+        new CopyWebpackPlugin([
+            {from: resolve(__dirname, "README.md")}
+        ]),
+        ...(process.argv.includes("production") ? [
             new ZipPlugin({
                 exclude: /(manifest|messages)\.js$/,
                 filename: [

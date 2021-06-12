@@ -3,13 +3,11 @@ module.exports = JSON.stringify(
   {
     extensionName: { message: `Dimentica questo sito` },
     extensionDescription: {
-      message: `Pulsante che elimina cookies, local storage, cronologia di navigazione e cronologia dei download del sito web corrente.`,
-    },
+      message: `Pulsante che elimina cookies, local storage, cronologia di navigazione e cronologia dei download del sito web corrente.`, },
     successNotificationText: { message: `Dati rimossi con successo` },
     successNotificationBody: { message: `Rimossi $1 per $2` },
     deleteItems: {
-      message: `Quando si clicca sul pulsante,<br>elimina i seguenti elementi per il sito web corrente:`,
-    },
+      message: `Quando si clicca sul pulsante,<br>elimina i seguenti elementi per il sito web corrente:`, },
     cookies: { message: `Cookies` },
     localStorage: { message: `Local storage` },
     history: { message: `Cronologia di navigazione` },
