@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "tslint -p . --fix",
-    "tag": "git tag $npm_package_version && git push origin $npm_package_version",
+    "tag": "git tag $npm_package_version --force && git push origin $npm_package_version --force",
     "build": "npm run firefox.build; npm run chrome.build",
     "chrome.dev": "BROWSER=chrome $npm_package_config_webpack --watch --mode development",
     "chrome.build": "BROWSER=chrome $npm_package_config_webpack --mode production",
