@@ -7,18 +7,11 @@ import { resolve } from "path";
 import * as webpack from "webpack";
 import * as ZipPlugin from "zip-webpack-plugin";
 
-const localeDirs = fs.readdirSync(resolve(__dirname, "app/_locales"));
-
 const config: webpack.Configuration = {
     entry: {
         background: resolve(__dirname, "app/background.ts"),
         manifest: resolve(__dirname, "app/manifest.ts"),
         options: resolve(__dirname, "app/options/options.ts"),
-        ...localeDirs.reduce((locales, dir) => {
-            const messageFile = `_locales/${dir}/messages`;
-            locales[messageFile] = resolve(__dirname, `app/${messageFile}.ts`);
-            return locales;
-        }, {}),
     },
     output: {
         filename: "[name].js",
@@ -38,7 +31,7 @@ const config: webpack.Configuration = {
     module: {
         rules: [
             {
-                test: /(messages|manifest)\.ts$/,
+                test: /manifest\.ts$/,
                 use: ExtractTextPlugin.extract({use: []})
             },
             {
@@ -77,7 +70,8 @@ const config: webpack.Configuration = {
             template: resolve(__dirname, "app/options/options.ejs"),
         }),
         new CopyWebpackPlugin([
-            {from: resolve(__dirname, "README.md")}
+            {from: resolve(__dirname, "README.md")},
+            {from: resolve(__dirname, "app/_locales"), to: "_locales"},
         ]),
         ...(process.argv.includes("production") ? [
             new ZipPlugin({
