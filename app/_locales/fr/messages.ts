@@ -17,7 +17,11 @@ module.exports = JSON.stringify(
     confirmationPrompt: { message: `Êtes-vous sûr de vouloir supprimer $1?` },
     closeTab: { message: `Close tab` },
     closeTabHelp: {
-      message: `Cela empêche le site Web d'écrire des éléments supplémentaires après la suppression`, },
+      message: `Cela empêche le site Web d'écrire des éléments supplémentaires après la suppression`,
+    },
+    closeSameDomainTabs: {
+      message: `Fermer tous les onglets avec le même domaine`,
+    },
     afterDeleting: { message: `Après avoir supprimé les éléments:` },
     showConfirmation: { message: `Afficher une confirmation` },
     reloadWebsite: { message: `Recharger le site web` },

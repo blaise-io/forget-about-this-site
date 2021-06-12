@@ -17,7 +17,9 @@ module.exports = JSON.stringify(
     confirmationPrompt: { message: `Are you sure you want to remove $1?` },
     closeTab: { message: `Close tab` },
     closeTabHelp: {
-      message: `This prevents the website from writing additional items after deletion`, },
+      message: `This prevents the website from writing additional items after deletion`,
+    },
+    closeSameDomainTabs: { message: `Close all tabs with the same domain` },
     afterDeleting: { message: `After deleting items:` },
     showConfirmation: { message: `Show a confirmation` },
     reloadWebsite: { message: `Reload the website` },

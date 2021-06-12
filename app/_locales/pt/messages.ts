@@ -17,7 +17,11 @@ module.exports = JSON.stringify(
     confirmationPrompt: { message: `Tem certeza de que deseja remover $1?` },
     closeTab: { message: `aba Fechar` },
     closeTabHelp: {
-      message: `Isso impede que o site escreva itens adicionais após a exclusão`, },
+      message: `Isso impede que o site escreva itens adicionais após a exclusão`,
+    },
+    closeSameDomainTabs: {
+      message: `Feche todas as guias com o mesmo domínio`,
+    },
     afterDeleting: { message: `Depois de excluir itens:` },
     showConfirmation: { message: `Mostrar uma confirmação` },
     reloadWebsite: { message: `Recarregue o site` },

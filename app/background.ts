@@ -44,6 +44,15 @@ browser.pageAction.onClicked.addListener(async (tab) => {
   const promises = [];
 
   if (options.closeTab) {
+    if (options.closeSameDomainTabs) {
+      const tabs = await browser.tabs.query({
+        url: `*://*.${hostnameDomain}/*`,
+      });
+      console.log(`Got ${tabs.length} tabs`);
+      tabs.forEach(async (t) => {
+        await browser.tabs.remove(t.id);
+      });
+    }
     await browser.tabs.remove(tab.id);
   }
 

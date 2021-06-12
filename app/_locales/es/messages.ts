@@ -18,7 +18,11 @@ module.exports = JSON.stringify(
       message: `¿Estás seguro de que quieres eliminar $1?`, },
     closeTab: { message: `Close tab` },
     closeTabHelp: {
-      message: `Esto evita que el sitio web escriba elementos adicionales después de la eliminación`, },
+      message: `Esto evita que el sitio web escriba elementos adicionales después de la eliminación`,
+    },
+    closeSameDomainTabs: {
+      message: `Cerrar todas las pestañas con el mismo dominio`,
+    },
     afterDeleting: { message: `Después de eliminar elementos:` },
     showConfirmation: { message: `Mostrar una confirmación` },
     reloadWebsite: { message: `Vuelva a cargar el sitio web` },

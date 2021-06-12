@@ -17,7 +17,11 @@ module.exports = JSON.stringify(
     confirmationPrompt: { message: `Weet u zeker dat u $1 wilt verwijderen?` },
     closeTab: { message: `Sluit tab` },
     closeTabHelp: {
-      message: `Dit voorkomt dat de website nog meer gegevens kan schrijven na het verwijderen`, },
+      message: `Dit voorkomt dat de website nog meer gegevens kan schrijven na het verwijderen`,
+    },
+    closeSameDomainTabs: {
+      message: `Sluit alle tabbladen met hetzelfde domein`,
+    },
     afterDeleting: { message: `Na verwijderen:` },
     showConfirmation: { message: `Toon een bevestiging` },
     reloadWebsite: { message: `Website vernieuwen` },

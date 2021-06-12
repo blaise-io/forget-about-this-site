@@ -17,7 +17,11 @@ module.exports = JSON.stringify(
     confirmationPrompt: { message: `Sei sicuro di voler rimuovere $1?` },
     closeTab: { message: `Chiudi la scheda` },
     closeTabHelp: {
-      message: `Ciò impedisce al sito web di salvare ulteriori dati dopo la cancellazione`, },
+      message: `Ciò impedisce al sito web di salvare ulteriori dati dopo la cancellazione`,
+    },
+    closeSameDomainTabs: {
+      message: `Chiudi tutte le schede con lo stesso dominio`,
+    },
     afterDeleting: { message: `Dopo la cancellazione:` },
     showConfirmation: { message: `Mostra una notifica` },
     reloadWebsite: { message: `Ricarica la pagina` },

@@ -18,7 +18,11 @@ module.exports = JSON.stringify(
       message: `Sind Sie sicher, dass Sie $1 entfernen möchten?`, },
     closeTab: { message: `Tab schließen` },
     closeTabHelp: {
-      message: `Dies verhindert, dass die Website nach dem Löschen zusätzliche Elemente schreibt`, },
+      message: `Dies verhindert, dass die Website nach dem Löschen zusätzliche Elemente schreibt`,
+    },
+    closeSameDomainTabs: {
+      message: `Alle Registerkarten mit der gleichen Domäne schließen`,
+    },
     afterDeleting: { message: `Nach dem Löschen von Elementen:` },
     showConfirmation: { message: `Bestätigung anzeigen` },
     reloadWebsite: { message: `Website neu laden` },

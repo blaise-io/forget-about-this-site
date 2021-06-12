@@ -9,6 +9,7 @@ const manifest = {
   default_locale: "en",
   permissions: [
     "activeTab",
+    "tabs",
     "browsingData",
     "downloads",
     "history",

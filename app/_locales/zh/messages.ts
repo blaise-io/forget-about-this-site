@@ -16,6 +16,7 @@ module.exports = JSON.stringify(
     confirmationPrompt: { message: `您确定要删除$1吗？` },
     closeTab: { message: `关闭标签` },
     closeTabHelp: { message: `这可以防止网站在删除后写出其他项目` },
+    closeSameDomainTabs: { message: `关闭具有相同域的所有选项卡` },
     afterDeleting: { message: `删除项目后:` },
     showConfirmation: { message: `显示确认` },
     reloadWebsite: { message: `重新加载网站` },
